@@ -1,0 +1,13 @@
+#include "tinyxml2.h"
+#include <stdio.h>
+
+int main(void)
+{
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile( "sample.xml" );
+	const char* title = doc.FirstChildElement( "trkpt" )->FirstChildElement( "ele" )->GetText();
+	printf( "Name of play (1): %s\n", title );
+	//printf("test");
+	return 0;
+}
+
